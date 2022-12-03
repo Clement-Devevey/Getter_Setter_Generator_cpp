@@ -9,7 +9,8 @@ Generate getter and setter for cpp classes.
 
 # Results
 
-```c++/*
+```c++
+/*
 * Définit var1
 * @param var1
 */
@@ -43,4 +44,5 @@ void setVar2(MyClass2 const& var2)
 MyClass2 getVar2() const
 {
 	 return m_var2;
-}```
+}
+```
