@@ -46,3 +46,7 @@ MyClass2 getVar2() const
 	 return m_var2;
 }
 ```
+
+#TODO
+- Support args option --override=true
+- Support args option --pure-virtual=true
