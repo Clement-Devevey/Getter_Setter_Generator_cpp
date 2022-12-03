@@ -107,6 +107,6 @@ MyClasse2 getVar2() const
 }
 ```
 # TODO
-[x]Rewrite prog using boost.Program_options
-[]Support args option --override=true
-[]Support args option --pure-virtual=true
+- [x]Rewrite prog using boost.Program_options
+- [ ]Support args option --override=true
+- [ ]Support args option --pure-virtual=true
