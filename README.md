@@ -1,7 +1,19 @@
-[TOC]
-
 # Getter_Setter_Generator_cpp
-Generate getter and setter for cpp classes.
+Generate getter and setter for cpp classes. Configure pure virtual and override. Methods inside class defintion are inline by default.
+
+# Table of content
+- [Getter\_Setter\_Generator\_cpp](#getter_setter_generator_cpp)
+- [Table of content](#table-of-content)
+- [Compilation](#compilation)
+	- [V1](#v1)
+	- [V2](#v2)
+- [Usage](#usage)
+	- [V1](#v1-1)
+	- [V2](#v2-1)
+- [Results](#results)
+	- [V1](#v1-2)
+	- [V2](#v2-2)
+- [TODO](#todo)
 
 # Compilation
 ## V1
@@ -9,7 +21,7 @@ Generate getter and setter for cpp classes.
 
 ## V2
 - Requires Boost library
-```g++ boost_main.cpp Variables.cpp -o boost_main.exe -lboost_program_options```
+- ```g++ boost_main.cpp Variables.cpp -o boost_main.exe -lboost_program_options```
 
 # Usage
 ## V1
@@ -95,6 +107,6 @@ MyClasse2 getVar2() const
 }
 ```
 # TODO
-[x] Rewrite prog using boost.Program_options
-[ ] Support args option --override=true
-[ ] Support args option --pure-virtual=true
+[x]Rewrite prog using boost.Program_options
+[]Support args option --override=true
+[]Support args option --pure-virtual=true
