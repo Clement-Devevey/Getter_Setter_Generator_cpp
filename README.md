@@ -1,3 +1,5 @@
+[ToC]
+
 # Getter_Setter_Generator_cpp
 Generate getter and setter for cpp classes.
 
@@ -6,7 +8,7 @@ Generate getter and setter for cpp classes.
 ```g++ main.cpp -o main```
 
 ## V2
-Requires Boost library
+- Requires Boost library
 ```g++ boost_main.cpp Variables.cpp -o boost_main.exe -lboost_program_options```
 
 # Usage
@@ -57,7 +59,7 @@ MyClass2 getVar2() const
 ```
 
 ## V2
-```
+```c++
 /*
 * Définit var1
 * @param var1
