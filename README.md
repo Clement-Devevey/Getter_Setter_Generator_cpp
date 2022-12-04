@@ -5,108 +5,87 @@ Generate getter and setter for cpp classes. Configure pure virtual and override.
 - [Getter\_Setter\_Generator\_cpp](#getter_setter_generator_cpp)
 - [Table of content](#table-of-content)
 - [Compilation](#compilation)
-	- [V1](#v1)
-	- [V2](#v2)
+	- [using QT Creator](#using-qt-creator)
+	- [using command line](#using-command-line)
 - [Usage](#usage)
-	- [V1](#v1-1)
-	- [V2](#v2-1)
 - [Results](#results)
-	- [V1](#v1-2)
-	- [V2](#v2-2)
 - [TODO](#todo)
 
 # Compilation
-## V1
-```g++ main.cpp -o main```
+## using QT Creator
+Simply link CMake to the project.
 
-## V2
+## using command line
 - Requires Boost library
 - ```g++ boost_main.cpp Variables.cpp -o boost_main.exe -lboost_program_options```
 
 # Usage
-## V1
-```./main MyClass1 m_var1 MyClass2 m_var2```
+```./GetterSetterGenerator -v MyClass1:m_var1 MyClass2:m_var2 [-o] [-p] [-h]```
 
-## V2
-```./boost_main.exe -v MyClasse1:m_var1 MyClasse2:m_var2```
 
 # Results
-## V1
 ```c++
+override set to 1
+pure-virtual set to 1
+VARIABLES DETECTED: 
+/*
+* @return var1
+*/
+virtual MyClass1 getVar1() const = 0;
+
 /*
 * Définit var1
 * @param var1
 */
-void setVar1(MyClass1 const& var1)
-{
-	m_var1 = var1;
-}
+virtual void setVar1(MyClass1 const& var1) = 0;
 
 /*
-* @return m_var1
+* @return var2
 */
-
-MyClass1 getVar1() const
-{
-	 return m_var1;
-}
+virtual MyClass2 getVar2() const = 0;
 
 /*
 * Définit var2
 * @param var2
 */
-void setVar2(MyClass2 const& var2)
-{
-	m_var2 = var2;
-}
+virtual void setVar2(MyClass2 const& var2) = 0;
 
-
-/*
-* @return m_var2
-*/
-MyClass2 getVar2() const
-{
-	 return m_var2;
-}
-```
-
-## V2
-```c++
 /*
 * Définit var1
 * @param var1
 */
-void setVar1(MyClasse1 const& var1)
+MyClass1 getVar1() const override
 {
-	m_var1 = var1;
+	 return m_var1;
 }
 
 /*
 * @return var1
 */
-MyClasse1 getVar1() const
+void setVar1(MyClass1 const& var1) override
 {
-	 return m_var1;
+	m_var1 = var1;
 }
 
 /*
 * Définit var2
 * @param var2
 */
-void setVar2(MyClasse2 const& var2)
+MyClass2 getVar2() const override
 {
-	m_var2 = var2;
+	 return m_var2;
 }
 
 /*
 * @return var2
 */
-MyClasse2 getVar2() const
+void setVar2(MyClass2 const& var2) override
 {
-	 return m_var2;
+	m_var2 = var2;
 }
+
 ```
 # TODO
 - [x] Rewrite prog using boost.Program_options
-- [ ] Support args option --override=true
-- [ ] Support args option --pure-virtual=true
+- [x] Support args option --override=true
+- [x] Support args option --pure-virtual=true
