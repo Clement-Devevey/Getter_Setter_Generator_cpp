@@ -3,7 +3,7 @@
 void Variables::fillNames()
 {
     if (m_name.length() < 2) throw std::runtime_error("Var name can't be < 2");
-    name = (m_name[0] == 'm' && m_name[1] == '_' ) ? m_name.substr (2, m_name.length()) : m_name;
+    name = (m_name[0] == 'm' && m_name[1] == '_' ) ? m_name.substr(2, m_name.length()) : m_name;
     Name = name;
     Name[0] = toupper(Name[0]);
 }
@@ -78,8 +78,8 @@ std::istream& operator>>(std::istream& is, Variables& o_var)
 {
     std::string s;
     is >> s;
-    const size_t sep = s.find(':');
-    if (sep==std::string::npos)
+    size_t const sep = s.find(':');
+    if (sep == std::string::npos)
     {
         throw std::runtime_error("bad input");
     } 

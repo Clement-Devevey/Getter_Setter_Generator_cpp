@@ -30,7 +30,7 @@ int main(int argc, const char *argv[])
 
         variables_map vm;
         store(parse_command_line(argc, argv, desc), vm);
-        notify(vm);
+        //notify(vm);
 
         if (vm.count("help"))
         {
@@ -74,7 +74,6 @@ int main(int argc, const char *argv[])
                     arg.fillGetter(b_override, gettersSetters).fillSetter(b_override, gettersSetters);
                 }
             }
-
             std::cout << virtualGettersSetters.str() << gettersSetters.str();
         }
         else
