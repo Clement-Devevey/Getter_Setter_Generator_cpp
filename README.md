@@ -89,3 +89,4 @@ void setVar2(MyClass2 const& var2) override
 - [x] Rewrite prog using boost.Program_options
 - [x] Support args option --override=true
 - [x] Support args option --pure-virtual=true
+- [x] Display all virtual methods first then others
