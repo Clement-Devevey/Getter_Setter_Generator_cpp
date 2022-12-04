@@ -2,6 +2,7 @@
 
 void Variables::fillNames()
 {
+    if (m_name.length() < 2) throw std::runtime_error("Var name can't be < 2");
     name = (m_name[0] == 'm' && m_name[1] == '_' ) ? m_name.substr (2, m_name.length()) : m_name;
     Name = name;
     Name[0] = toupper(Name[0]);
