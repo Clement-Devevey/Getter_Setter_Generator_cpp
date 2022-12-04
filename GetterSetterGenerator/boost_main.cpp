@@ -66,12 +66,12 @@ int main(int argc, const char *argv[])
                 //std::cout << arg;
                 if (b_pureVirtual)
                 {
-                    arg.printPureVirtualGetter(virtualGettersSetters).printPureVirtualSetter(virtualGettersSetters);
-                    if (b_override) arg.printGetter(b_override, gettersSetters).printSetter(b_override, gettersSetters);
+                    arg.fillPureVirtualGetter(virtualGettersSetters).fillPureVirtualSetter(virtualGettersSetters);
+                    if (b_override) arg.fillGetter(b_override, gettersSetters).fillSetter(b_override, gettersSetters);
                 }
                 else
                 {
-                    arg.printGetter(b_override, gettersSetters).printSetter(b_override, gettersSetters);
+                    arg.fillGetter(b_override, gettersSetters).fillSetter(b_override, gettersSetters);
                 }
             }
 

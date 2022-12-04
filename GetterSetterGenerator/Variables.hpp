@@ -18,26 +18,25 @@ private:
     std::string  colorsOfComments = colors.green;
 
 public:
-    std::string  type;
-    std::string  name;
-    std::string  Name;
-    std::string  m_name;
+    std::string type;
+    std::string name;
+    std::string Name;
+    std::string m_name;
 
     void fillNames();
 
-    Variables const& printGetter(bool const& b_override, std::stringstream  & os) const;
+    Variables const& fillGetter(bool const& b_override, std::stringstream& oss_getter) const;
+    Variables const& fillSetter(bool const& b_override, std::stringstream& oss_setter) const;
 
-    Variables const& printSetter(bool const& b_override, std::stringstream  & os) const;
-
-    Variables const& printPureVirtualSetter(std::stringstream  & os) const;
-    Variables const& printPureVirtualGetter(std::stringstream  & os) const;
+    Variables const& fillPureVirtualGetter(std::stringstream& oss_getter) const;
+    Variables const& fillPureVirtualSetter(std::stringstream& oss_setter) const;
 
 protected:
-    void printGetterDoxygenComments(std::stringstream  & os) const;
-    void printSetterDoxygenComments(std::stringstream  & os) const;
+    void fillGetterDoxygenComments(std::stringstream& oss_getter) const;
+    void fillSetterDoxygenComments(std::stringstream& oss_setter) const;
 };
 
 // Helper functions
-std::istream& operator>>(std::istream& in, Variables& v);
+std::istream& operator>>(std::istream& in, Variables& o_var);
 
-std::ostream& operator<<(std::ostream& os, Variables const& v);
+std::ostream& operator<<(std::ostream& os, Variables const& i_var);

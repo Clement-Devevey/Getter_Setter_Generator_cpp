@@ -34,3 +34,8 @@ main
 
 # Vscode
 .vscode
+
+# No want to push these
+GetterSetterGenerator/CMakeLists.txt.user
+build-GetterSetterGenerator-Desktop-Debug/
+build-GetterSetterGenerator-Desktop-Release/
